@@ -10,6 +10,9 @@
   <header class="header">
     <div class="header-content">
       <a href="../index.html" class="logo">TeaPots</a>
+      <nav class="nav">
+        <a href="./index.html">Products</a>
+      </nav>
       <div class="header-icons">
         <span class="cart-icon">🛒 <span id="cartCount">0</span></span>
         <span class="wishlist-icon">♥ <span id="wishlistCount">0</span></span>
@@ -34,69 +37,20 @@
       document.getElementById('wishlistCount').textContent = getWishlist().length;
     }
 
-    // Render products
+    // Render products - clicking card goes to detail page
     function renderProducts() {
       const grid = document.getElementById('productsGrid');
       
       grid.innerHTML = products.map(product => {
-        const inWishlist = isInWishlist(product.id);
         return `
-          <div class="product-card-list">
-            <a href="./${product.id}/" class="product-link">
-              <img src="${product.image}" alt="${product.name}" class="product-image" />
-              <h2 class="product-title">${product.name}</h2>
-              <p class="product-description">${product.description}</p>
-              <div class="price">${formatPrice(product.price)}</div>
-            </a>
-            <div class="product-actions">
-              <button class="btn btn-primary btn-small" onclick="handleAddToCart(${product.id})">
-                Add to Cart
-              </button>
-              <button class="btn btn-wishlist btn-small ${inWishlist ? 'active' : ''}" 
-                      onclick="handleWishlist(${product.id})"
-                      id="wishlist-btn-${product.id}">
-                ${inWishlist ? '♥' : '♡'}
-              </button>
-            </div>
-          </div>
+          <a href="./${product.id}/index.html" class="product-card-list product-card-clickable">
+            <img src="${product.image}" alt="${product.name}" class="product-image" />
+            <h2 class="product-title">${product.name}</h2>
+            <p class="product-description">${product.description}</p>
+            <div class="price">${formatPrice(product.price)}</div>
+          </a>
         `;
       }).join('');
-    }
-
-    // Handle add to cart
-    function handleAddToCart(productId) {
-      addToCart(productId, 1);
-      updateHeaderCounts();
-      showToast('Added to cart!');
-    }
-
-    // Handle wishlist toggle
-    function handleWishlist(productId) {
-      const wishlist = toggleWishlist(productId);
-      const btn = document.getElementById(`wishlist-btn-${productId}`);
-      const inWishlist = wishlist.includes(productId);
-      
-      btn.classList.toggle('active', inWishlist);
-      btn.textContent = inWishlist ? '♥' : '♡';
-      updateHeaderCounts();
-      showToast(inWishlist ? 'Added to wishlist!' : 'Removed from wishlist');
-    }
-
-    // Toast notification
-    function showToast(message) {
-      const existing = document.querySelector('.toast');
-      if (existing) existing.remove();
-      
-      const toast = document.createElement('div');
-      toast.className = 'toast';
-      toast.textContent = message;
-      document.body.appendChild(toast);
-      
-      setTimeout(() => toast.classList.add('show'), 10);
-      setTimeout(() => {
-        toast.classList.remove('show');
-        setTimeout(() => toast.remove(), 300);
-      }, 2000);
     }
 
     // Initialize

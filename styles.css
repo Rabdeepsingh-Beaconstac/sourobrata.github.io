@@ -97,6 +97,14 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
+.product-card-clickable {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 16px;
+  cursor: pointer;
+}
+
 .product-link {
   display: block;
   text-decoration: none;
