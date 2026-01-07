@@ -3,48 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TeaPots | Premium Tea Pot Collection</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    .hero {
-      text-align: center;
-      padding: 80px 24px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-    }
-    
-    .hero h1 {
-      font-size: 48px;
-      margin: 0 0 16px;
-    }
-    
-    .hero p {
-      font-size: 18px;
-      margin: 0 0 32px;
-      opacity: 0.9;
-    }
-    
-    .hero .btn {
-      display: inline-block;
-      padding: 16px 32px;
-      background: white;
-      color: #764ba2;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    
-    .hero .btn:hover {
-      background: #f0f0f0;
-    }
-  </style>
+  <title>Our Products | Tea Pots Collection</title>
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
   <header class="header">
     <div class="header-content">
-      <a href="index.html" class="logo">TeaPots</a>
-      <nav class="nav">
-        <a href="products/">Products</a>
-      </nav>
+      <a href="../index.html" class="logo">TeaPots</a>
       <div class="header-icons">
         <span class="cart-icon">🛒 <span id="cartCount">0</span></span>
         <span class="wishlist-icon">♥ <span id="wishlistCount">0</span></span>
@@ -52,22 +17,16 @@
     </div>
   </header>
 
-  <section class="hero">
-    <h1>Premium Tea Pots</h1>
-    <p>Discover our handcrafted collection of elegant tea pots</p>
-    <a href="products/" class="btn">Shop Now</a>
-  </section>
-
   <main class="main-content">
-    <h2 class="page-title">Featured Products</h2>
-    <p class="page-subtitle">Our most popular tea pots</p>
+    <h1 class="page-title">Our Collection</h1>
+    <p class="page-subtitle">Discover our handpicked selection of premium tea pots</p>
     
     <div class="products-grid" id="productsGrid">
       <!-- Products will be loaded here by JavaScript -->
     </div>
   </main>
 
-  <script src="data.js"></script>
+  <script src="../data.js"></script>
   <script>
     // Update header counts
     function updateHeaderCounts() {
@@ -83,7 +42,7 @@
         const inWishlist = isInWishlist(product.id);
         return `
           <div class="product-card-list">
-            <a href="products/${product.id}/" class="product-link">
+            <a href="./${product.id}/" class="product-link">
               <img src="${product.image}" alt="${product.name}" class="product-image" />
               <h2 class="product-title">${product.name}</h2>
               <p class="product-description">${product.description}</p>
