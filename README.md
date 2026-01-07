@@ -12,4 +12,6 @@ Simple e-commerce site with 3 tea pot products. Features product listing, detail
 
 ## Deployment
 Just push to main to deploy.
+Note: We are on limited (300) credits on the linked account, and one collaborator. If deployment fails, just signup for a new free account and deploy manually.
+
 Netlify: https://dapper-torrone-f2552a.netlify.app/
