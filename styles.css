@@ -57,24 +57,54 @@
     font-size: 14px;
   }
   
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .btn {
     width: 100%;
     padding: 12px;
-    background: #007bff;
-    color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
   }
+
+  .btn-primary {
+    background: #007bff;
+    color: white;
+  }
   
-  .btn:hover {
+  .btn-primary:hover {
     background: #0056b3;
+  }
+
+  .btn-wishlist {
+    background: #fff;
+    color: #e91e63;
+    border: 2px solid #e91e63;
+  }
+
+  .btn-wishlist:hover {
+    background: #fce4ec;
+  }
+
+  .btn-wishlist.active {
+    background: #e91e63;
+    color: white;
   }
   
   .cart-message {
     margin-top: 12px;
     color: green;
+    font-weight: bold;
+  }
+
+  .wishlist-message {
+    margin-top: 8px;
+    color: #e91e63;
     font-weight: bold;
   }
   
