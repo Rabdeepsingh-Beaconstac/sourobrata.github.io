@@ -12,4 +12,4 @@ Simple e-commerce site with 3 tea pot products. Features product listing, detail
 
 ## Deployment
 Just push to main to deploy.
-sourobrata.github.io
+https://sourobrata.github.io
